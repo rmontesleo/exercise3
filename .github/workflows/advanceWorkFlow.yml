@@ -47,18 +47,13 @@ jobs:
           STEP_VAR: "This variable is declared at the step level"  
         run: |
           echo "Test the different variables"
-          echo "WORKFLOW_VAR is ${{WORKFLOW_VAR}}"
-          echo "JOB_VAR is ${{JOB_VAR}}"
-          echo "STEP_VAR is ${{STEP_VAR}}"
+          echo "WORKFLOW_VAR is ${{env. WORKFLOW_VAR}}"
+          echo "JOB_VAR is ${{env.JOB_VAR}}"
+          echo "STEP_VAR is ${{env.STEP_VAR}}"
+          echo $STEP_VAR
           echo "The following is a secret : ${{secrets.SOME_SECRET}}, of course, I cant tell you"
           echo "The following are default environment variables"
           echo $GITHUB_ACTOR
           echo $GITHUB_JOB
           echo $GITHUB_REF
 
-
-              
-
-
-
-          
